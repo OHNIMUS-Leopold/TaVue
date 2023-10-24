@@ -13,6 +13,8 @@ module.exports = {
         blanc: "#FFFFFF",
         grisAA: "#AAAAAA",
         gris88: "#888888",
+        grisEB: "#EBEBEB",
+        gris66: "#666666",
 
         /* Couleurs */
         darkblue: "#42558E",
