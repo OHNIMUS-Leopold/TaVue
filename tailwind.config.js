@@ -11,6 +11,8 @@ module.exports = {
         noir1E: "#1E1E1E",
         noir11: "#111111",
         blanc: "#FFFFFF",
+        grisAA: "#AAAAAA",
+        gris88: "#888888",
 
         /* Couleurs */
         darkblue: "#42558E",
