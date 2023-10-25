@@ -62,7 +62,7 @@ window.addEventListener('user-disconnected', () => {
                         <RouterLink to="/">Lunettes populaires</RouterLink>
                     </li>
                     <li class="text-sm font-bold uppercase">
-                        <RouterLink to="/">Les réductions</RouterLink>
+                        <RouterLink to="/map">Les réductions</RouterLink>
                     </li>
                 </div>
 

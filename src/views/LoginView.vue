@@ -103,7 +103,7 @@ const deconnect = ()=>{
         <div class="col-span-3"></div>
     </div>
 
-    <div class="">              
+    <div class="mb-28">              
         <span v-if="isConnected"> 
         <img :src="avatar" class="" style="max-width:60px;" />
         <p class="">
@@ -115,7 +115,7 @@ const deconnect = ()=>{
         </span>
 
         <form v-else class="" >
-            <input class="" placeholder="Login" v-model="user">
+            <input class="" type="email" placeholder="Login" v-model="user">
             <input class="" placeholder="Password" v-model="psw">
             <button class="" 
                 type="button" @click.prevent="connect">

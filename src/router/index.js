@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ConfigurateurView from '../views/ConfigurateurView.vue'
 import LoginView from '../views/LoginView.vue'
+import MapView from '../views/MapView.vue'
 
 // Import pocketbase
 import PocketBase from 'pocketbase'
@@ -14,6 +15,7 @@ const router = createRouter({
     { path: '/',                        name: 'home',                   component: HomeView,               },
     { path: '/configurateur',           name: 'configurateur',          component: ConfigurateurView,      },
     { path: '/login',                   name: 'login',                  component: LoginView,              },
+    { path: '/map',                     name: 'map',                    component: MapView,                },
   ]
 })
 
@@ -28,7 +30,7 @@ router.beforeEach( (to, from, next) =>{
     if(pb.authStore.model != null){ // Utilisateur connecté => OK
       next()
     }else{ // Utilisateur non connecté, redirection sur la page d'acceuil
-      router.push({name:"home"})
+      router.push({name:"login"})
     }
   }
 })
