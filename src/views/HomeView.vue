@@ -80,7 +80,44 @@ const isBanner1Visible = computed(() => currentBannerIndex.value === 0);
 
   <div class="h-[101px]"></div>
 
-  
+  <div class="grid grid-cols-7 mt-40">
+    <div></div>
+    <div class="col-span-5 grid grid-cols-2 gap-8">
+      <div>
+        <img src="../assets/img/fond01.png" alt="Réduction 1">
+        <div class="-mt-[36%] ml-12 mr-48">
+          <p class="text-noir11 font-bold text-sm font-josefin uppercase">
+            jusqu'au 8 novembre
+          </p>
+          <h3 class="text-noir11 font-medium text-3xl font-josefin mt-4 mb-6">
+            25% de Réduction sur  les Paires Métal
+          </h3>
+          <p>
+            <RouterLink to="#" class="text-noir11 font-bold text-sm font-nunito bg-blanc rounded-3xl py-3 px-5">
+              Commander Maintenant
+            </RouterLink>
+          </p>
+        </div>
+      </div>
+      <div>
+        <img src="../assets/img/fond02.png" alt="Réduction 2">
+        <div class="-mt-[36%] ml-12 mr-48">
+          <p class="text-noir11 font-bold text-sm font-josefin uppercase">
+            Pendant 2 semaines
+          </p>
+          <h3 class="text-noir11 font-medium text-3xl font-josefin mt-4 mb-6">
+            -5% sur Toutes les Paires Solaires
+          </h3>
+          <p>
+            <RouterLink to="#" class="text-noir11 font-bold text-sm font-nunito bg-blanc rounded-3xl py-3 px-5">
+              Commander Maintenant
+            </RouterLink>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div></div>
+  </div>
 
   <div class="grid grid-cols-7 mt-40">
     <div></div>
