@@ -10,6 +10,7 @@ module.exports = {
         // Noirs et blancs
         noir1E: "#1E1E1E",
         noir11: "#111111",
+        noir: "#000000",
         blanc: "#FFFFFF",
         blancF5: "#F5F5F5",
         grisAA: "#AAAAAA",
