@@ -28,7 +28,7 @@
             .setView([46.473347, 2.500780], 4)
 
         let myIcon = Leaflet.icon({
-            iconUrl:    '../src/assets/marker/marker-icon.png',      
+            iconUrl:    '../assets/marker/marker-icon.png',      
             iconSize:   [35, 50],            
             shadowSize: [25, 41],        
             iconAnchor: [25, 35],                     
