@@ -8,7 +8,7 @@
   // Import pocketbase
   import PocketBase from 'pocketbase'
   // Objet pocketBase
-  const pb = new PocketBase("http://45.147.96.69:80");
+  const pb = new PocketBase("https://tavue.leopold-ohnimus.fr:443");
 
   
   // user connecté ? au départ faux
@@ -35,7 +35,7 @@ const refresh = ()=>{
     isConnected.value = true
 
     avatar.value =
-      "http://45.147.96.69:80/api/files/"  // Adresse serveur et repertoire des fichiers image
+      "https://tavue.leopold-ohnimus.fr:443/api/files/"  // Adresse serveur et repertoire des fichiers image
       +currentUser.value.collectionId     // Id ou name de la collection concernée
       +"/"
       +currentUser.value.id               // Id de l'utilisateur connecté

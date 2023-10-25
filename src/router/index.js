@@ -7,7 +7,7 @@ import MapView from '../views/MapView.vue'
 // Import pocketbase
 import PocketBase from 'pocketbase'
 // Objet pocketBase
-const pb = new PocketBase("http://45.147.96.69:80");
+const pb = new PocketBase("https://tavue.leopold-ohnimus.fr:443");
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
