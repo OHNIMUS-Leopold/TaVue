@@ -2,7 +2,7 @@
   // Import éléments de vue
   import { ref, onMounted } from 'vue';
   // Import éléments de routage
-  import { useRouter } from 'vue-router';
+  import { RouterLink, useRouter } from 'vue-router';
   const router = useRouter()
 
   // Import pocketbase
@@ -95,32 +95,52 @@ const deconnect = ()=>{
 <template>
     <div class="grid grid-cols-8">
         <div class="col-span-3"></div>
-        <div class="col-span-2 mt-48 mb-60 border-solid border-[1px] border-grisEB rounded-md">
-            <h1 class="font-josefin font-medium text-xl text-gris66 text-center">
-                Connexion / Inscription
-            </h1>
+        <div class="col-span-2 mt-48 mb-60 border-solid border-[1px] border-grisEB rounded-md py-9">
+            
+            
+            <div>     
+              
+              
+              <div v-if="isConnected" class="text-center"> 
+                <img :src="avatar" class="rounded-full mx-auto" style="max-width:100px;" />
+                <ul class="mt-4">
+                  <li>{{ currentUser.nom }} {{ currentUser.prenom }}</li>
+                  <li>{{ currentUser.email }}</li>
+                </ul>
+                <button class="text-base font-nunito font-semibold rounded-3xl text-blanc bg-noir11 py-[10px] px-[22px] mt-9" type="button" @click="deconnect">
+                  Se déconnecter
+                </button>
+              </div>
+
+
+
+
+              <form v-else class="flex flex-col" >
+                  <h1 class="font-josefin font-medium text-xl text-gris66 text-center mb-4">
+                      Connexion / Inscription
+                  </h1>
+                  <input class="outline-none text-sm font-nunito text-gris66 bg-blancF5 py-[10px] px-4 mx-8 mb-5" type="email" placeholder="Adresse Mail" v-model="user">
+                  <input class="outline-none text-sm font-nunito text-gris66 bg-blancF5 py-[10px] px-4 mx-8" placeholder="Mot de passe" v-model="psw">
+                  <button>
+                    <RouterLink to="#" class="flex text-sm font-nunito text-noir11 mt-2 mb-8 mx-8">
+                      Mot de passe oublié ?
+                    </RouterLink>
+                  </button>
+                  <div class="flex justify-center items-center space-x-5">
+                    <button class="text-base font-nunito font-semibold rounded-3xl text-noir11 bg-gris66 bg-opacity-30 py-[10px] px-[22px]"
+                        type="button" @click.prevent="connect">
+                        Se connecter
+                    </button>
+                    <button class="text-base font-nunito font-semibold rounded-3xl text-blanc bg-noir11 py-[10px] px-[22px]" type="button">
+                      S'inscrire
+                    </button>
+                  </div>
+              </form>
+
+
+
+          </div>
         </div>
         <div class="col-span-3"></div>
-    </div>
-
-    <div class="mb-28">              
-        <span v-if="isConnected"> 
-        <img :src="avatar" class="" style="max-width:60px;" />
-        <p class="">
-            {{ currentUser.nom }}
-        </p>
-        <button class="" type="button" @click="deconnect">
-            sign out
-            </button>
-        </span>
-
-        <form v-else class="" >
-            <input class="" type="email" placeholder="Login" v-model="user">
-            <input class="" placeholder="Password" v-model="psw">
-            <button class="" 
-                type="button" @click.prevent="connect">
-                connexion
-            </button>
-        </form>
     </div>
 </template>
