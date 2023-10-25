@@ -80,7 +80,34 @@ const isBanner1Visible = computed(() => currentBannerIndex.value === 0);
 
   <div class="h-[101px]"></div>
 
-  <div class="grid grid-cols-7 py-16 border-solid border-b-0 border-x-0 border-noir border-opacity-10 border-[1px] mt-4">
+  
+
+  <div class="grid grid-cols-7 mt-40">
+    <div></div>
+    <div class="col-span-5 grid grid-cols-6">
+      <div>
+        <img src="../assets/img/shop/brand-08.png" alt="Magasin 1" class="max-w-[120px] mx-auto">
+      </div>
+      <div>
+        <img src="../assets/img/shop/brand-03.png" alt="Magasin 2" class="max-w-[120px] mx-auto">
+      </div>
+      <div>
+        <img src="../assets/img/shop/brand-04.png" alt="Magasin 3" class="max-w-[120px] mx-auto">
+      </div>
+      <div>
+        <img src="../assets/img/shop/brand-05.png" alt="Magasin 4" class="max-w-[120px] mx-auto">
+      </div>
+      <div>
+        <img src="../assets/img/shop/brand-07.png" alt="Magasin 5" class="max-w-[120px] mx-auto">
+      </div>
+      <div>
+        <img src="../assets/img/shop/brand-08.png" alt="Magasin 1" class="max-w-[120px] mx-auto">
+      </div>
+    </div>
+    <div></div>
+  </div>
+
+  <div class="grid grid-cols-7 py-16 border-solid border-b-0 border-x-0 border-noir border-opacity-10 border-[1px] mt-32">
     <div></div>
     <div class="col-span-5 grid grid-cols-4">
       <div class="grid grid-cols-5">
