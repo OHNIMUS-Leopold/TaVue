@@ -3,6 +3,21 @@ import SearchIcon from './icons/SearchIcon.vue'
 import UserIcon from './icons/UserIcon.vue'
 import FavorisIcon from './icons/FavorisIcon.vue'
 import PanierIcon from './icons/PanierIcon.vue'
+
+import { ref } from 'vue';
+
+let avatar = ref(null)
+
+// Ajoutez cela dans le script setup de HeaderComp.vue
+window.addEventListener('user-connected', (event) => {
+  // Mettez à jour l'avatar avec la valeur reçue de l'événement
+  avatar.value = event.detail.avatar;
+});
+
+window.addEventListener('user-disconnected', () => {
+  // Réinitialisez l'avatar à null lors de la déconnexion
+  avatar.value = null;
+});
 </script>
 
 <template>
@@ -59,9 +74,16 @@ import PanierIcon from './icons/PanierIcon.vue'
                         </RouterLink>
                     </li>
                     <li>
-                        <RouterLink to="/login">
-                            <UserIcon/>
-                        </RouterLink>
+                        <div v-if="avatar == null" class="contents">
+                            <RouterLink to="/login">
+                                <UserIcon/>
+                            </RouterLink>
+                        </div>
+                        <div v-else class="contents">
+                            <RouterLink to="/login">
+                                <img :src="avatar" class="rounded-full" style="max-width:20px;" />
+                            </RouterLink>
+                        </div>
                     </li>
                     <li>
                         <RouterLink to="/#">
