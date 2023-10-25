@@ -18,6 +18,11 @@ window.addEventListener('user-disconnected', () => {
   // Réinitialisez l'avatar à null lors de la déconnexion
   avatar.value = null;
 });
+
+const handleAvatarError = () => {
+  // Lorsque l'avatar ne peut pas être chargé (erreur 404), affichez l'image par défaut
+  avatar.value = null; // Réinitialisez avatar à null
+}
 </script>
 
 <template>
@@ -81,7 +86,7 @@ window.addEventListener('user-disconnected', () => {
                         </div>
                         <div v-else class="contents">
                             <RouterLink to="/login">
-                                <img :src="avatar" class="rounded-full" style="max-width:20px;" />
+                                <img :src="avatar" class="rounded-full" @error="handleAvatarError" style="max-width:20px;" />
                             </RouterLink>
                         </div>
                     </li>
