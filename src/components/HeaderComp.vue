@@ -5,18 +5,22 @@ import FavorisIcon from './icons/FavorisIcon.vue'
 import PanierIcon from './icons/PanierIcon.vue'
 
 import { ref } from 'vue';
+let avatar = ref(localStorage.getItem('userAvatar') || null); // Utilisez la valeur par défaut null si l'avatar n'est pas dans le local storage
 
-let avatar = ref(null)
+const updateAvatar = (newAvatar) => {
+  avatar.value = newAvatar;
+  // Stockez la nouvelle valeur de l'avatar dans le local storage
+  localStorage.setItem('userAvatar', newAvatar);
+};
 
-// Ajoutez cela dans le script setup de HeaderComp.vue
 window.addEventListener('user-connected', (event) => {
   // Mettez à jour l'avatar avec la valeur reçue de l'événement
-  avatar.value = event.detail.avatar;
+  updateAvatar(event.detail.avatar);
 });
 
 window.addEventListener('user-disconnected', () => {
   // Réinitialisez l'avatar à null lors de la déconnexion
-  avatar.value = null;
+  updateAvatar(null);
 });
 
 const handleAvatarError = () => {
