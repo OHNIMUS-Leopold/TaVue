@@ -1,5 +1,7 @@
 <script setup>
     import { ref, onMounted } from 'vue'
+    import { useRouter } from 'vue-router'
+    const router = useRouter()
 
     import PocketBase from 'pocketbase'
     const pb = new PocketBase("https://tavue.leopold-ohnimus.fr:443");
@@ -27,6 +29,7 @@
 
     const createLunettes = async()=>{
         await pb.collection('lunettes').create(newLunettes.value)
+        router.push('/panier')
     }
 
     onMounted(()=>{
@@ -123,7 +126,7 @@
             </div>
         </div>
     </div>
-    <div v-for="lunette in lunettes" :key="lunette.id">
+    <!-- <div v-for="lunette in lunettes" :key="lunette.id">
       <p>Lunette: {{ lunette.libelle }}</p>
 
 
@@ -158,7 +161,7 @@
                     </g>
                 </g>
             </svg>
-    </div>
+    </div> -->
 </template>
 
 <style>

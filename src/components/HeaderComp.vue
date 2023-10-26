@@ -100,7 +100,7 @@ const handleAvatarError = () => {
                         </RouterLink>
                     </li>
                     <li>
-                        <RouterLink to="/#">
+                        <RouterLink to="/panier">
                             <PanierIcon/>
                         </RouterLink>
                     </li>

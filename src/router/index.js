@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import ConfigurateurView from '../views/ConfigurateurView.vue'
 import LoginView from '../views/LoginView.vue'
 import MapView from '../views/MapView.vue'
+import PanierView from '../views/PanierView.vue'
 
 // Import pocketbase
 import PocketBase from 'pocketbase'
@@ -16,6 +17,7 @@ const router = createRouter({
     { path: '/configurateur',           name: 'configurateur',          component: ConfigurateurView,      },
     { path: '/login',                   name: 'login',                  component: LoginView,              },
     { path: '/map',                     name: 'map',                    component: MapView,                },
+    { path: '/panier',                  name: 'panier',                 component: PanierView,             },
   ]
 })
 
