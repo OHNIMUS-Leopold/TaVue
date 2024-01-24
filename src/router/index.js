@@ -8,7 +8,7 @@ import PanierView from '../views/PanierView.vue'
 // Import pocketbase
 import PocketBase from 'pocketbase'
 // Objet pocketBase
-const pb = new PocketBase("https://tavue.leopold-ohnimus.fr:443");
+const pb = new PocketBase(import.meta.env.VITE_URL_POCKETBASE);
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

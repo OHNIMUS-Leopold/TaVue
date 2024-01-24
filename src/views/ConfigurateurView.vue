@@ -4,7 +4,7 @@
     const router = useRouter()
 
     import PocketBase from 'pocketbase'
-    const pb = new PocketBase("https://tavue.leopold-ohnimus.fr:443");
+    const pb = new PocketBase(import.meta.env.VITE_URL_POCKETBASE);
 
     let couleurs = ref([]);
     let couleurCadre = ref();
